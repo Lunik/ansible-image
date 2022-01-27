@@ -1,0 +1,17 @@
+
+# Ansible
+
+ansible=={{ ansible }}
+
+# Connections
+
+pywinrm
+pywinrm[credssp]
+
+# Plugins
+
+## jsonquery
+jmespath
+
+## Crypto
+cryptography
