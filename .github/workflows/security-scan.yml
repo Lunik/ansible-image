@@ -24,17 +24,30 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@master
+      - name: Setup Python
+        uses: actions/setup-python@v2.3.1
         with:
-          image-ref: ${{ env.image_name }}:${{ matrix.ansible }}-${{ matrix.os }}
-          format: template
-          template: '@/contrib/sarif.tpl'
-          output: trivy-results.sarif
-          severity: HIGH,CRITICAL
+          cache: 'pip'
 
-      - name: Upload Trivy scan results to GitHub Security tab
-        uses: github/codeql-action/upload-sarif@v1
-        if: always()
+      - name: Setup requirements
+        run: pip install -r requirements.txt
+
+      - name: Template build files
+        run: |
+          python3 scripts/render_templates.py \
+          '${{ toJSON(matrix) }}' \
+          dist/${{ matrix.ansible }}_${{ matrix.os }}
+
+      - name: Run Snyk to check Docker image for vulnerabilities
+        uses: snyk/actions/docker@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          sarif_file: 'trivy-results.sarif'
+          image: ${{ env.image_name }}:${{ matrix.ansible }}-${{ matrix.os }}
+          args: --file=dist/${{ matrix.ansible }}_${{ matrix.os }}/Dockerfile
+
+      #- name: Upload result to GitHub Code Scanning
+      #  uses: github/codeql-action/upload-sarif@v1
+      #  if: always()
+      #  with:
+      #    sarif_file: snyk.sarif
