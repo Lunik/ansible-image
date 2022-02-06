@@ -12,6 +12,3 @@ pywinrm[credssp]
 
 ## jsonquery
 jmespath
-
-## Crypto
-cryptography
