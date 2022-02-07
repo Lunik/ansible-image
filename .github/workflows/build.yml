@@ -23,6 +23,8 @@ jobs:
         os:
           - slim-bullseye
           - alpine3.15
+        platform:
+          - linux/amd64,linux/arm64/v8
     steps:
       - uses: actions/checkout@v2
 
@@ -79,7 +81,7 @@ jobs:
         with:
           cache-from: ${{ env.image_name }}:${{ matrix.ansible }}-${{ matrix.os }}
           context: dist/${{ matrix.ansible }}_${{ matrix.os }}
-          platforms: linux/amd64,linux/arm/v7,linux/arm64/v8
+          platforms: ${{ matrix.platform }}
           pull: true
           push: true
           tags: ${{ steps.meta.outputs.tags }}
