@@ -17,7 +17,6 @@ jobs:
       matrix:
         ansible:
           - 5.5.0
-          - 4.10.0
         python:
           - 3.10.2
         os:
