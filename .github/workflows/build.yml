@@ -10,13 +10,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      lts: 5.3.0
+      lts: 5.5.0
       default_os: alpine3.15
       image_name: lunik/ansible
     strategy:
       matrix:
         ansible:
-          - 5.3.0
+          - 5.5.0
           - 4.10.0
         python:
           - 3.10.2
