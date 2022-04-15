@@ -12,6 +12,7 @@ jobs:
     env:
       image_name: lunik/ansible
     strategy:
+      fail-fast: false
       matrix:
         ansible:
           - 5.6.0
