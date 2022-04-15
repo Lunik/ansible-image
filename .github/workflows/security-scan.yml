@@ -16,7 +16,7 @@ jobs:
         ansible:
           - 5.6.0
         python:
-          - 3.10.2
+          - 3.10.4
         os:
           - slim-bullseye
           - alpine3.15
