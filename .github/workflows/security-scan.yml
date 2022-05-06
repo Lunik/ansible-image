@@ -15,7 +15,7 @@ jobs:
       fail-fast: false
       matrix:
         ansible:
-          - 5.7.0
+          - 5.7.1
         python:
           - 3.10.4
         os:
