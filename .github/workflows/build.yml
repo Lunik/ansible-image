@@ -10,14 +10,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      lts: 5.7.1
+      lts: 5.8.0
       default_os: alpine3.15
       image_name: lunik/ansible
     strategy:
       fail-fast: false
       matrix:
         ansible:
-          - 5.7.1
+          - 5.8.0
         python:
           - 3.10.4
         os:
