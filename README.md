@@ -10,16 +10,16 @@ Supported architectures: amd64, arm/v7, arm64/v8
 
 ## Simple Tags
 
-- [`5.8.0`][version-5-sources], [`5.7`][version-5-sources], [`5`][version-5-sources], [`latest`][version-5-sources]
-- [`5.8.0-alpine3.15`][version-5-sources], [`5.7-alpine3.15`][version-5-sources], [`5-alpine3.15`][version-5-sources], [`alpine`][version-5-sources]
-- [`5.8.0-slim-bullseye`][version-5-sources], [`5.7-slim-bullseye`][version-5-sources], [`5-slim-bullseye`][version-5-sources], [`slim-bullseye`][version-5-sources], [`debian`][version-5-sources]
+- [`5.8.0`][version-5-sources], [`5.8`][version-5-sources], [`5`][version-5-sources], [`latest`][version-5-sources]
+- [`5.8.0-alpine3.15`][version-5-sources], [`5.8-alpine3.15`][version-5-sources], [`5-alpine3.15`][version-5-sources], [`alpine`][version-5-sources]
+- [`5.8.0-slim-bullseye`][version-5-sources], [`5.8-slim-bullseye`][version-5-sources], [`5-slim-bullseye`][version-5-sources], [`slim-bullseye`][version-5-sources], [`debian`][version-5-sources]
 - [`4.10.0`][version-4-sources], [`4.10`][version-4-sources], [`4`][version-4-sources]
 - [`4.10.0-alpine3.15`][version-4-sources], [`4.10-alpine3.15`][version-4-sources], [`4-alpine3.15`][version-4-sources], [`alpine`][version-4-sources]
 - [`4.10.0-slim-bullseye`][version-4-sources], [`4.10-slim-bullseye`][version-4-sources], [`4-slim-bullseye`][version-4-sources], [`slim-bullseye`][version-4-sources]
 
 ### Shared tags
 
-- `5.8.0`, `5.7`, `5`, `latest`, `alpine`
+- `5.8.0`, `5.8`, `5`, `latest`, `alpine`
   - `5.8.0-alpine3.15`
 
 - `debian`
